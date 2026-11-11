@@ -1,0 +1,106 @@
+/* Telas de acesso: login, cadastro e recuperar senha */
+.au{--au-card:rgba(13,19,32,.78);--au-line:rgba(255,255,255,.14);--au-field:rgba(255,255,255,.04);min-height:100vh;color:#fff;position:relative}
+.au a{color:var(--orange);font-weight:700;text-decoration:none}
+.au a:hover{text-decoration:underline}
+
+/* ---------- Fundos escuros (login e cadastro) ---------- */
+.au-login,.au-cad{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:32px;padding:clamp(24px,5vw,72px);background:#060a14 center/cover no-repeat}
+.au-login{background-image:url('../assets/bg-login.png')}
+.au-cad{background-image:url('../assets/bg-cadastro.png');grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}
+.au-login .au-hero,.au-cad .au-hero{align-self:start;padding-top:clamp(0px,4vh,40px)}
+
+.au-logo{display:flex;align-items:center;gap:12px}
+.au-logo svg{width:56px;height:56px;flex:none}
+.au-logo b{display:block;font-size:44px;line-height:1;font-weight:800;letter-spacing:-.02em;color:#fff}
+.au-logo small{display:block;margin-top:4px;color:var(--orange);font-weight:800;font-style:italic;letter-spacing:.32em;font-size:17px}
+.au-logo.sm svg{width:44px;height:44px}.au-logo.sm b{font-size:0}.au-logo.sm small{display:none}
+.au-logo.on-light b{color:var(--ink);font-size:36px}.au-logo.on-light small{font-size:14px;letter-spacing:.2em}.au-logo.on-light svg{width:46px;height:46px}
+
+.au-hero h1{margin:clamp(24px,5vh,56px) 0 14px;font-size:clamp(30px,3.4vw,50px);line-height:1.12;font-weight:800;letter-spacing:-.02em}
+.au-hero h1 em{font-style:normal;color:var(--orange)}
+.au-hero>p{margin:0;max-width:430px;font-size:clamp(15px,1.3vw,18px);line-height:1.5;color:#d4dbe8}
+.au-feats{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:14px}
+.au-feats li{display:flex;align-items:center;gap:14px}
+.au-feats span{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:rgba(255,106,19,.14);border:1px solid rgba(255,106,19,.5);color:var(--orange)}
+.au-feats b{display:block;font-size:16px}.au-feats small{color:#b8c2d4;font-size:13px}
+
+/* ---------- Cartão do formulário ---------- */
+.au-card{justify-self:center;width:100%;max-width:620px;display:flex;flex-direction:column;gap:14px;padding:clamp(22px,3vw,44px);border-radius:26px;background:var(--au-card);border:1px solid var(--au-line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.au-card-sm{max-width:480px}
+.au-card h2{margin:0;font-size:clamp(28px,2.6vw,38px);font-weight:800;letter-spacing:-.01em}
+.au-card-sm h2{text-align:center}
+.au-card-logo{display:flex;justify-content:center;margin-bottom:-4px}
+.au-sub{margin:-8px 0 8px;color:#c6cedc;font-size:16px}
+.au-card-sm .au-sub{text-align:center}
+.au-grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+.au-field-wrap{display:flex;flex-direction:column;gap:5px;min-width:0}
+.au-field{display:flex;align-items:center;gap:12px;height:56px;padding:0 16px;border-radius:14px;background:var(--au-field);border:1px solid var(--au-line);color:#e8edf6;transition:border-color .15s,box-shadow .15s}
+.au-field:focus-within{border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,106,19,.22)}
+.au-field .lucide{width:22px;height:22px;color:#e8edf6;opacity:.85}
+.au-field input{flex:1;min-width:0;height:100%;border:0;outline:0;background:transparent;color:#fff;font-size:15px}
+.au-field input::placeholder{color:#9aa6ba}
+.au-field input:-webkit-autofill{-webkit-text-fill-color:#fff;transition:background-color 9999s}
+.au-eye{display:grid;place-items:center;border:0;background:none;padding:4px;color:#aeb8ca;border-radius:8px}
+.au-eye:hover{color:#fff}.au-eye .lucide{width:20px;height:20px}
+.au-tel .au-ddi{padding-right:12px;border-right:1px solid var(--au-line);font-weight:600}
+.au-field-wrap.has-err .au-field{border-color:#ff5c5c}
+.au-err{color:#ff8f8f;font-size:12.5px}
+.au-hint{color:#9aa6ba;font-size:12px;padding-left:8px}
+.au-row{display:flex;justify-content:flex-end;margin-top:-4px;font-size:13.5px}
+.au-alert{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:12px;font-size:14px;background:rgba(255,92,92,.14);border:1px solid rgba(255,92,92,.45);color:#ffb4b4}
+.au-alert.ok{background:rgba(32,177,90,.14);border-color:rgba(32,177,90,.5);color:#7be0a6}
+
+.au-check{display:flex;align-items:center;gap:10px;font-size:14px;color:#dbe2ee;cursor:pointer}
+.au-check input{appearance:none;width:22px;height:22px;flex:none;border-radius:6px;border:1.5px solid #8795ad;background:transparent;display:grid;place-items:center;cursor:pointer}
+.au-check input:checked{background:var(--orange);border-color:var(--orange)}
+.au-check input:checked::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.au-check input:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+
+.au-btn{display:flex;align-items:center;justify-content:center;gap:10px;height:56px;border:0;border-radius:14px;font-weight:700;font-size:17px;color:#fff;background:linear-gradient(180deg,#ff7a1f,#ff5a00);box-shadow:0 10px 26px rgba(255,106,19,.35);transition:transform .1s,filter .15s}
+.au-btn:hover{filter:brightness(1.07)}.au-btn:active{transform:translateY(1px)}
+.au-btn:disabled{opacity:.7;cursor:progress}
+.au-or{display:flex;align-items:center;gap:14px;color:#c6cedc;font-size:14px;margin-top:2px}
+.au-or::before,.au-or::after{content:"";flex:1;height:1px;background:var(--au-line)}
+.au-foot{margin:-4px 0 0;text-align:center;font-size:15px;color:#e8edf6}
+
+/* ---------- Recuperar senha (tela clara) ---------- */
+.au-rec{background:#f4f7fc;color:var(--ink)}
+.au-rec-top{display:flex;align-items:center;justify-content:space-between;padding:14px clamp(16px,4vw,64px);background:#fff;border-bottom:1px solid #e1e8f3}
+.au-rec-top a{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:600}
+.au-rec-card{max-width:1180px;margin:clamp(20px,4vw,44px) auto;padding:clamp(20px,4vw,56px);background:#fff;border:1px solid #e1e8f3;border-radius:28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 40px;box-shadow:0 10px 40px rgba(15,27,45,.06)}
+.au-rec-card form{display:flex;flex-direction:column;gap:18px;padding-right:40px;border-right:1px solid #e1e8f3}
+.au-rec-head{display:flex;gap:22px;align-items:center}
+.au-lock{width:84px;height:84px;flex:none;border-radius:50%;display:grid;place-items:center;background:#ffeadb;color:#101b33}
+.au-lock .lucide{width:40px;height:40px;fill:#101b33}
+.au-rec h2{margin:0 0 6px;font-size:clamp(28px,3vw,40px);font-weight:800;color:var(--ink)}
+.au-rec-head p{margin:0;color:#3d4f8a;font-size:16px;line-height:1.5}
+.au-field.light{background:#fff;border-color:#cdd8ee;color:var(--ink)}
+.au-field.light .lucide{color:var(--ink)}
+.au-field.light input{color:var(--ink)}.au-field.light input::placeholder{color:#7a8aa3}
+.au-rec .au-err{color:#d33}
+.au-rec .au-btn{box-shadow:0 8px 22px rgba(255,106,19,.3)}
+.au-or.light{color:var(--ink)}.au-or.light::before,.au-or.light::after{background:#cdd8ee}
+.au-back{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--ink)!important;font-weight:600!important}
+.au-rec-art{display:grid;place-items:center}.au-rec-art svg{width:100%;max-width:440px;height:auto}
+.au-info{grid-column:1/-1;display:flex;align-items:center;gap:18px;margin-top:28px;padding:16px 22px;border-radius:16px;background:#fdeadd}
+.au-info>span{width:44px;height:44px;flex:none;border-radius:50%;display:grid;place-items:center;background:var(--orange);color:#fff}
+.au-info b{display:block;color:var(--ink)}.au-info small{color:#3d4f6b;font-size:14px}
+
+/* ---------- Telas menores ---------- */
+@media (max-width:900px){
+  .au-login,.au-cad{grid-template-columns:1fr;gap:28px;align-items:start}
+  .au-login .au-hero,.au-cad .au-hero{padding-top:0}
+  .au-hero h1{margin-top:22px}
+  .au-feats{display:none}
+  .au-card{max-width:560px}
+  .au-rec-card{grid-template-columns:1fr}
+  .au-rec-card form{padding:0 0 24px;border-right:0;border-bottom:1px solid #e1e8f3}
+  .au-rec-art{margin-top:16px}
+}
+@media (max-width:560px){
+  .au-grid2{grid-template-columns:1fr}
+  .au-logo b{font-size:34px}.au-logo svg{width:46px;height:46px}
+  .au-rec-head{flex-direction:column;align-items:flex-start}
+  .au-rec-top a span{display:none}
+}

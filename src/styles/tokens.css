@@ -1,0 +1,28 @@
+/* Layout: sidebar navy fixa + área de conteúdo clara com cards brancos (fiel às telas do Figma) */
+:root{
+  --navy:#0e1a2b; --navy-2:#16253b; --navy-line:#24344d; --navy-text:#c9d4e3;
+  --orange:#ff6a13; --orange-2:#ff8a3d; --orange-soft:#fff1e7; --orange-line:#ffd3b5;
+  --bg:#f4f7fb; --card:#ffffff; --line:#e4eaf2; --line-2:#eef2f7;
+  --ink:#0f1b2d; --text:#2a3a52; --sub:#3f6cb0; --muted:#7a8aa3;
+  --blue:#2f7bf5; --blue-soft:#e8f1ff; --green:#20b15a; --green-soft:#e4f7ec;
+  --purple:#7c4dff; --purple-soft:#efe9ff; --red:#ef3b3b; --red-soft:#fde8e8;
+  --yellow:#ffb800; --teal:#1fb6a6;
+  --font:"Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --r:12px; --r-sm:8px;
+  --shadow:0 1px 2px rgba(15,27,45,.04), 0 2px 8px rgba(15,27,45,.04);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;line-height:1.45}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.lucide{width:18px;height:18px;stroke-width:2;flex:none}
+.num{font-variant-numeric:tabular-nums}
+
+/* Reset básico (antes vinha do esqueleto do claude.ai) */
+html,body{margin:0}
+body{font-size:14px}
+img{max-width:100%}
+[hidden]{display:none!important}
